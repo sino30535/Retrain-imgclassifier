@@ -54,8 +54,8 @@ python retrain.py \
     --random_crop 0 \
     --random_scale 0 \
     --random_brightness 0 \
-    -- tfhub_module https://tfhub.dev/google/imagenet/mobilenet_v2_100_224/classification/2 \
+    --tfhub_module https://tfhub.dev/google/imagenet/mobilenet_v2_100_224/classification/2 \
 ```
 You can try different hyperparameters or add some random modification to the images in order to get a more robust model. \
-You can find different pre-build tfhub_module at <https://tfhub.dev/>, simply the model you like and copy the url to tfhub_module. \
+You can find different pre-build tfhub_module at <https://tfhub.dev/>, simply the model you like and copy the url to tfhub_module.
 
