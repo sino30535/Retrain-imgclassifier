@@ -23,7 +23,7 @@ classifier. \
 \Echeveria monroe \
 \Not Echeveria
 
-I downloaded some random pictures in "Not Echeveria" folder to 
+I downloaded some random pictures in "Not Echeveria" folder to classify other objects.
 
 # Retrain model
 First we git clone the tensorflow-hub repo.
