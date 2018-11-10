@@ -85,4 +85,6 @@ rename the model to graph.lite and the output_labels.txt to labels.txt.
 Connect to a android device with version >= android 5.x (lollipop), activate "developer mode" and "USB Debugging". 
 Build the app and the result should look like this:
 
-
+<div style='float: center'>
+  <img style='width: 300px' height='500' src="IMG_1636.jpg"></img>
+</div>
