@@ -6,7 +6,7 @@ This is a tutorial for retraining a mobilenet(or other neural network models) us
 - python 3.6
 
 # Installation
-- pip install tensorflow==1.9
+- pip install tensorflow>=1.9
 - pip install tensorflow-hub
 - pip install google_image_download
 
@@ -58,4 +58,31 @@ python retrain.py \
 ```
 You can try different hyperparameters or add some random modification to the images in order to get a more robust model. \
 You can find different pre-build tfhub_module at <https://tfhub.dev/>, simply the model you like and copy the url to tfhub_module.
+
+# Convert trained model to tflite model
+Start a Linux virtual machine, install tensorflow and necessary dependency, and transfer the trained model to virtual machine,
+the toco command used in google codelab didn't work for me for some reason. Instead tflite_convert works fine.
+run:
+```
+tflite_convert --output_file=output_model_path/converted_model.tflite 
+--graph_def_file=path_where_you_save_trained_model/output_graph.pb 
+--input_arrays=Placeholder --output_arrays=final_result 
+```
+
+# Deploy on Android
+Install android studio, and clone the google codelab repository,
+
+```
+git clone https://github.com/googlecodelabs/tensorflow-for-poets-2
+
+cd tensorflow-for-poets-2
+```
+Copy and paste the converted_model.tflite and output_labels.txt to 
+ensorflow-for-poets-2-master\android\tflite\app\src\main\assets , 
+rename the model to graph.lite and the output_labels.txt to labels.txt.
+
+# Build the app
+Connect to a android device with version >= android 5.x (lollipop), activate "developer mode" and "USB Debugging". 
+Build the app and the result should look like this:
+
 
